@@ -1,13 +1,123 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-image: url("../public/calculator-bg.jpg");
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* background-color: #000; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.display {
+  background-color: #1c1c1c;
+  padding: 20px;
+  font-size: 30px;
+  text-align: right;
+  height: 130px;
+  border-bottom: 1px solid #444;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: #1c1c1c;
+  padding: 1px;
+}
+
+button {
+  background-color: #333;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 50%;
+  margin: 5px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+button:active {
+  background-color: #555;
+}
+
+button:nth-child(4n) {
+  background-color: #ff9500;
+  color: white;
+}
+
+button:nth-child(4n):hover {
+  background-color: #ffad33;
+}
+
+button.zero {
+  grid-column: span 2;
+  width: 135px; 
+  justify-content: left;
+  padding-left: 30px; 
+  border-radius: 50px; 
+}
+
+.display .input {
+  height: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.display .result {
+  /* height: 30px; */
+  color: #00ff00;
+}
+.footer {
+  text-align: center;
+  padding: 10px;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  /* background: linear-gradient(-60deg, rgb(16, 24, 65), rgb(32, 43, 96)); */
+  /* border-top: 1px solid #ffffff20; */
+}
+
+.footer-text {
+  color: white;
+}
+
+.footer-link {
+  color: #f8f9fa;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-logo {
+  width: auto;
+  height: 15px;
+  margin: 0 5px;
+  vertical-align: middle;
 }
